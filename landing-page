@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Georgia Pediatric Program (GAPP) – No-Cost In-Home Care for Children</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  /* Core */
+  --navy:#0a1f44;
+  --blue:#0d9488;
+  --blue-d:#0b7a70;
+  --blue-l:#eff4ff;
+  --blue-m:#c7d9fd;
+  /* Accents */
+  --red:#c0392b;
+  --red-l:#fdf0ef;
+  --red-m:#f5c6c2;
+  --gold:#d4a017;
+  --gold-l:#fdf8ec;
+  --gold-m:#f5e0a0;
+  /* Neutrals */
+  --white:#ffffff;
+  --gray50:#f9fafb;
+  --gray100:#f3f4f6;
+  --gray200:#e5e7eb;
+  --gray300:#d1d5db;
+  --gray400:#9ca3af;
+  --gray600:#4b5563;
+  --gray700:#374151;
+  /* Legacy aliases (keep for compat) */
+  --teal:var(--blue);
+  --teal-d:var(--blue-d);
+  --teal-xl:var(--blue-l);
+  --teal-l:var(--blue-m);
+  --green:#15803d;
+  --green-l:#dcfce7;
+  /* Radius */
+  --r6:6px;
+  --r10:10px;
+  --r14:14px;
+  --r20:20px;
+  /* Shadows */
+  --s1:0 1px 3px rgba(10,31,68,.06),0 4px 14px rgba(10,31,68,.08);
+  --s2:0 2px 8px rgba(10,31,68,.07),0 16px 40px rgba(10,31,68,.12);
+  --s3:0 4px 16px rgba(10,31,68,.09),0 32px 64px rgba(10,31,68,.16);
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--navy);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+.wrap{max-width:1160px;margin:0 auto;padding:0 48px}
+.eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.h2{font-family:'Lora',serif;font-size:clamp(1.85rem,3.2vw,2.65rem);font-weight:500;color:var(--navy);line-height:1.18;letter-spacing:-.01em;margin-bottom:14px}
+.lead{font-size:.97rem;color:var(--gray600);line-height:1.82;max-width:540px}
+.btn-teal{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;border:none;border-radius:var(--r10);padding:13px 26px;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;text-decoration:none;letter-spacing:.01em;transition:background .18s,transform .12s,box-shadow .18s}
+.btn-teal:hover{background:var(--teal-d);transform:translateY(-1px);box-shadow:0 6px 20px rgba(12,139,145,.28)}
+
+/* ══ INFO STRIP ══ */
+.infostrip{background:var(--navy);height:36px;display:flex;align-items:center;padding:0 48px;border-bottom:1px solid rgba(255,255,255,.06)}
+.infostrip-i{max-width:1160px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.isl{display:flex;align-items:center;gap:0}
+.isitem{display:flex;align-items:center;gap:6px;font-size:.71rem;color:rgba(255,255,255,.5);padding:0 14px;border-right:1px solid rgba(255,255,255,.08);white-space:nowrap}
+.isitem:first-child{padding-left:0}
+.isitem svg{width:11px;height:11px;stroke:rgba(255,255,255,.35);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.isitem a{color:rgba(255,255,255,.5);transition:color .15s}.isitem a:hover{color:#fff}
+.isr{display:flex;align-items:center;gap:16px;flex-shrink:0}
+.isr-badge{display:flex;align-items:center;gap:6px;font-size:.68rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.38)}
+.isr-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* ══ MAIN NAV ══ */
+.nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:2px solid var(--gray200);box-shadow:0 2px 16px rgba(13,31,60,.08)}
+.nav-i{max-width:1160px;margin:0 auto;padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+
+.logo{display:flex;align-items:center;gap:13px}
+.logo-box{width:42px;height:42px;border-radius:11px;background:var(--navy);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.logo-box svg{width:21px;height:21px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.logo-text .ln{font-family:'Lora',serif;font-size:1.12rem;font-weight:600;color:var(--navy);display:block;line-height:1.1;letter-spacing:-.01em}
+.logo-text .ls{font-size:.61rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);display:block;margin-top:3px}
+
+.nav-r{display:flex;align-items:center;gap:18px}
+.nav-tel{display:flex;align-items:center;gap:9px;text-decoration:none}
+.tel-ico{width:36px;height:36px;border-radius:9px;background:var(--blue-l);border:1px solid var(--blue-m);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tel-ico svg{width:14px;height:14px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tel-txt .tn{font-size:.92rem;font-weight:700;color:var(--navy);display:block;line-height:1.1}
+.tel-txt .tl{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.09em;color:var(--gray600);display:block}
+.nvdiv{width:1px;height:28px;background:var(--gray200)}
+.nav-btn{background:var(--blue);color:#fff;border:none;border-radius:var(--r10);padding:11px 22px;font-family:'Inter',sans-serif;font-size:.855rem;font-weight:600;text-decoration:none;cursor:pointer;white-space:nowrap;letter-spacing:.01em;transition:background .18s,transform .12s,box-shadow .18s}
+.nav-btn:hover{background:var(--blue-d);transform:translateY(-1px);box-shadow:0 4px 14px rgba(13,148,136,.3)}
+
+/* ══ HERO ══ */
+.hero{background:#fff;padding:0 48px;border-bottom:2px solid var(--gray100)}
+.hero-g{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 416px;gap:64px;align-items:start;padding:68px 0 80px}
+
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-l);border:1px solid var(--gold-m);border-radius:100px;padding:5px 14px;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.bdot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:blink 2s ease infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Lora',serif;font-size:clamp(2.5rem,4.5vw,3.8rem);font-weight:500;color:var(--navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--blue)}
+.hero-sub{font-size:1.03rem;color:var(--gray600);line-height:1.82;max-width:490px;margin-bottom:32px}
+.hero-sub strong{color:var(--navy);font-weight:600}
+.hchecks{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+.hcrow{display:flex;align-items:flex-start;gap:11px;font-size:.9rem;color:var(--gray700);line-height:1.5}
+.hcrow strong{color:var(--navy);font-weight:600}
+.hcdot{width:20px;height:20px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center}
+.hcdot svg{width:10px;height:10px;fill:none;stroke:#fff;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+.hstats{display:flex;gap:0;border-top:1px solid var(--gray200);padding-top:28px;margin-top:20px}
+.hstat{flex:1}.hstat+.hstat{border-left:1px solid var(--gray200);padding-left:28px}
+.hsn{font-family:'Lora',serif;font-size:2rem;font-weight:500;color:var(--navy);line-height:1}
+.hsl{font-size:.74rem;color:var(--gray600);margin-top:4px}
+
+/* ══ FORM ══ */
+.fcard{background:#fff;border:1px solid var(--gray200);border-radius:var(--r20);overflow:hidden;box-shadow:var(--s3)}
+.fhd{background:var(--navy);padding:26px 30px 22px;border-top:4px solid var(--gold)}
+.fhd-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:3px 10px;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-bottom:12px}
+.fhd-tag svg{width:9px;height:9px;stroke:currentColor;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.fhd h2{font-family:'Lora',serif;font-size:1.42rem;font-weight:500;color:#fff;line-height:1.25;margin-bottom:6px}
+.fhd p{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.55}
+.fbd{padding:24px 30px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fcol{grid-column:1/-1}
+.fl{display:block;font-size:.72rem;font-weight:600;color:var(--gray700);margin-bottom:4px}
+.fi{width:100%;padding:10px 13px;border:1.5px solid var(--gray300);border-radius:var(--r6);background:var(--gray50);font-family:'Inter',sans-serif;font-size:.875rem;color:var(--navy);outline:none;appearance:none;-webkit-appearance:none;transition:border-color .18s,box-shadow .18s,background .18s}
+.fi::placeholder{color:var(--gray400)}
+.fi:focus{border-color:var(--teal);background:#fff;box-shadow:0 0 0 3px rgba(12,139,145,.09)}
+select.fi{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236c757d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 11px center;background-size:13px;padding-right:34px;cursor:pointer}
+textarea.fi{resize:vertical;min-height:70px;line-height:1.55}
+.fsubmit{width:100%;margin-top:14px;padding:13px;background:var(--blue);color:#fff;border:none;border-radius:var(--r10);font-family:'Inter',sans-serif;font-size:.9rem;font-weight:700;cursor:pointer;letter-spacing:.01em;transition:background .18s,transform .12s,box-shadow .18s}
+.fsubmit:hover{background:var(--blue-d);transform:translateY(-1px);box-shadow:0 6px 18px rgba(13,148,136,.3)}
+.ftrust{display:flex;align-items:center;justify-content:center;gap:5px;font-size:.7rem;color:var(--gray600);margin-top:9px}
+.ftrust svg{width:11px;height:11px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.fsuccess{display:none;text-align:center;padding:48px 20px}
+.fsring{width:58px;height:58px;border-radius:50%;background:var(--green-l);border:1.5px solid #a3cfbb;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.fsring svg{width:26px;height:26px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fsuccess h3{font-family:'Lora',serif;font-size:1.5rem;font-weight:500;color:var(--navy);margin-bottom:10px}
+.fsuccess p{font-size:.86rem;color:var(--gray600);line-height:1.7}
+.fcallnow{display:inline-block;color:var(--teal);font-weight:600;margin-top:14px;font-size:.875rem}
+
+/* ══ TRUST RIBBON ══ */
+.trib{background:#fff;border-bottom:2px solid var(--gray100);padding:16px 48px}
+.trib-i{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
+.tr{display:flex;align-items:center;gap:7px;font-size:.8rem;font-weight:500;color:var(--gray700)}.tr svg{stroke:var(--blue)!important}
+.tr svg{width:14px;height:14px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.trsep{width:1px;height:16px;background:var(--gray200)}
+
+/* ══ SECTION TYPES ══ */
+.sw{padding:88px 48px;background:#fff}           /* white */
+.sg{padding:88px 48px;background:var(--gray50);border-top:2px solid var(--gray200);border-bottom:2px solid var(--gray200)}  /* gray strong contrast */
+.sn{padding:88px 48px;background:var(--navy)}    /* navy maximum contrast */
+.sn .eyebrow{color:#5dcbd0}
+.sn .h2{color:#fff}
+.sn .lead{color:rgba(255,255,255,.55)}
+
+/* ══ VIDEO ══ */
+.vid-wrap{max-width:1160px;margin:0 auto}
+.vid-copy{text-align:center;max-width:640px;margin:0 auto 40px}
+.vd-tag{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--gray200);border-radius:100px;padding:5px 14px 5px 7px;font-size:.73rem;font-weight:600;color:var(--navy);margin-bottom:20px}
+.vd-play{width:26px;height:26px;border-radius:50%;background:var(--teal);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.vd-play svg{width:9px;height:9px;fill:#fff;margin-left:1px}
+.vid-copy h2{font-family:'Lora',serif;font-size:2rem;font-weight:500;color:var(--navy);line-height:1.25;letter-spacing:-.01em;margin-bottom:14px}
+.vid-copy p{font-size:.93rem;color:var(--gray600);line-height:1.82;margin-bottom:22px}
+.vid-link{display:inline-flex;align-items:center;gap:7px;color:var(--blue);font-size:.875rem;font-weight:600;transition:gap .15s}
+.vid-link:hover{gap:11px}
+.vid-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.vid-frame{aspect-ratio:16/9;border-radius:var(--r14);overflow:hidden;border:1px solid var(--gray200);box-shadow:var(--s3);background:#000}
+.vid-frame iframe{width:100%;height:100%;border:none;display:block}
+
+/* ══ EMOTIONAL ══ */
+.emo-g{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.emo-pull{font-family:'Lora',serif;font-style:italic;font-size:1.62rem;font-weight:400;color:var(--navy);line-height:1.42;padding-left:20px;border-left:3px solid var(--blue);margin-bottom:26px}
+.emo-body p{font-size:.94rem;color:var(--gray600);line-height:1.85;margin-bottom:16px}
+.emo-body p strong{color:var(--navy);font-weight:600}
+.ecards{display:flex;flex-direction:column;gap:12px}
+.ecard{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1.5px solid var(--gray200);border-radius:var(--r10);padding:20px;transition:border-color .2s,box-shadow .2s}
+.ecard:hover{border-color:var(--teal-l);box-shadow:var(--s1)}
+.eico{width:38px;height:38px;border-radius:9px;background:var(--blue-l);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.eico svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ecard h4{font-size:.88rem;font-weight:600;color:var(--navy);margin-bottom:3px}
+.ecard p{font-size:.81rem;color:var(--gray600);line-height:1.62;margin:0}
+
+/* ══ BENEFITS ══ */
+.ben-hd{max-width:1160px;margin:0 auto 48px}
+.ben-g{
+  max-width:1160px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-radius:var(--r14);overflow:hidden;
+  border:1px solid var(--gray200);
+  gap:1px;
+  background:var(--gray200);
+}
+.bc{background:#fff;padding:32px;transition:background .2s;border:none}
+.bc:hover{background:var(--blue-l)}
+.bcn{font-family:'Lora',serif;font-size:1.9rem;font-weight:400;color:var(--gold);line-height:1;margin-bottom:16px}
+.bc h3{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.bc p{font-size:.82rem;color:var(--gray600);line-height:1.72}
+
+/* ══ PROCESS ══ */
+.proc-g{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:56px}
+.proc-g::before{content:'';position:absolute;top:26px;left:calc(12.5% + 13px);right:calc(12.5% + 13px);height:1px;background:rgba(255,255,255,.15);z-index:0}
+.pstep{text-align:center;padding:0 20px;position:relative;z-index:1}
+.pnum{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.06);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-size:1.3rem;font-weight:500;color:var(--gold);margin:0 auto 18px;box-shadow:0 0 0 8px var(--navy)}
+.pstep h3{font-size:.875rem;font-weight:600;color:#fff;margin-bottom:8px}
+.pstep p{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.65}
+.proc-cta{text-align:center;margin-top:48px}
+
+/* ══ SERVICES ══ */
+.svc-g{max-width:1160px;margin:48px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.scard{background:#fff;border:1.5px solid var(--gray200);border-radius:var(--r14);padding:30px}
+.shd{display:flex;align-items:center;gap:14px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--gray100)}
+.sico{width:40px;height:40px;border-radius:9px;background:var(--blue-l);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.sico svg{width:18px;height:18px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.scard h3{font-size:.9rem;font-weight:700;color:var(--navy)}
+.ssub{font-size:.73rem;color:var(--gray600);margin-top:2px}
+.slist{list-style:none;display:flex;flex-direction:column;gap:10px}
+.slist li{display:flex;align-items:flex-start;gap:10px;font-size:.85rem;color:var(--gray700);line-height:1.5}
+.slist li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:7px}
+
+/* ══ TESTIMONIALS ══ */
+.tgrid{max-width:1160px;margin:48px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tcard{background:#fff;border:1.5px solid var(--gray200);border-radius:var(--r14);padding:28px;display:flex;flex-direction:column;transition:box-shadow .2s,border-color .2s}
+.tcard:hover{box-shadow:var(--s1);border-color:var(--teal-l)}
+.tcstars{color:var(--gold);font-size:.85rem;letter-spacing:3px;margin-bottom:14px}
+.tcq{font-family:'Lora',serif;font-style:italic;font-size:1.03rem;font-weight:400;color:var(--navy);line-height:1.58;flex:1;margin-bottom:18px}
+.tcf{display:flex;align-items:center;gap:11px;padding-top:16px;border-top:1px solid var(--gray100)}
+.tcav{width:34px;height:34px;border-radius:50%;background:var(--navy);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-size:.9rem;color:#fff}
+.tcn{font-size:.82rem;font-weight:700;color:var(--navy)}
+.tcm{font-size:.72rem;color:var(--gray600)}
+
+/* ══ KATIE BECKETT ══ */
+.kb-g{max-width:1160px;margin:52px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.kbitems{display:flex;flex-direction:column;gap:12px}
+.kbi{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1.5px solid var(--gray200);border-radius:var(--r10);padding:18px;transition:border-color .2s}
+.kbi:hover{border-color:var(--teal-l)}
+.kbico{width:32px;height:32px;border-radius:7px;background:var(--blue-l);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.kbico svg{width:14px;height:14px;stroke:var(--blue);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.kbi strong{display:block;font-size:.86rem;font-weight:700;color:var(--navy);margin-bottom:3px}
+.kbi span{font-size:.8rem;color:var(--gray600);line-height:1.55}
+.kbpanel{background:#fff;border:1.5px solid var(--gray200);border-radius:var(--r20);padding:36px}
+.kbpull{font-family:'Lora',serif;font-style:italic;font-size:1.42rem;font-weight:400;color:var(--navy);line-height:1.42;padding-left:18px;border-left:3px solid var(--blue);margin-bottom:18px}
+.kbpanel p{font-size:.9rem;color:var(--gray600);line-height:1.8;margin-bottom:26px}
+.kbpanel p strong{color:var(--navy);font-weight:600}
+
+/* ══ FINAL CTA ══ */
+.fcta{background:var(--navy);padding:96px 48px;text-align:center}
+.fcta-i{max-width:620px;margin:0 auto}
+.fcta-label{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.fcta-h{font-family:'Lora',serif;font-size:clamp(2rem,4.5vw,3.1rem);font-weight:500;color:#fff;line-height:1.12;letter-spacing:-.02em;margin-bottom:18px}
+.fcta-h em{font-style:italic;color:var(--gold)}
+.fcta-p{font-size:.97rem;color:rgba(255,255,255,.52);line-height:1.82;margin-bottom:36px}
+.fcta-btns{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.fcta-a{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;border:none;border-radius:var(--r10);padding:14px 28px;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:600;text-decoration:none;cursor:pointer;transition:background .18s,transform .12s}
+.fcta-a:hover{background:var(--blue-d);transform:translateY(-1px)}
+.fcta-b{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.78);border:1.5px solid rgba(255,255,255,.16);border-radius:var(--r10);padding:12px 24px;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:500;text-decoration:none;transition:background .18s}
+.fcta-b:hover{background:rgba(255,255,255,.13)}
+.fcta-b svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fcta-note{font-size:.74rem;color:rgba(255,255,255,.25);margin-top:22px}
+
+/* ══ FOOTER ══ */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:60px 48px 36px}
+.ftg{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.07)}
+.ftb .fbn{font-family:'Lora',serif;font-size:1.12rem;font-weight:500;color:#fff;display:block;margin-bottom:10px}
+.ftb p{font-size:.82rem;color:rgba(255,255,255,.32);line-height:1.75}
+.ftlinks{display:flex;flex-direction:column;gap:8px;margin-top:18px}
+.ftlinks a{display:flex;align-items:center;gap:7px;font-size:.79rem;color:rgba(255,255,255,.35);text-decoration:none;transition:color .15s}
+.ftlinks a:hover{color:rgba(255,255,255,.7)}
+.ftlinks a svg{width:11px;height:11px;stroke:rgba(255,255,255,.28);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.ftc h5{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:14px}
+.ftc a{display:block;font-size:.81rem;color:rgba(255,255,255,.3);text-decoration:none;margin-bottom:9px;transition:color .15s}
+.ftc a:hover{color:rgba(255,255,255,.65)}
+.ftxt{display:block;font-size:.81rem;color:rgba(255,255,255,.3);margin-bottom:9px;cursor:default}
+.ftlinks-item{display:flex;align-items:center;gap:7px;font-size:.79rem;color:rgba(255,255,255,.35)}
+.ftlinks-item svg{width:11px;height:11px;stroke:rgba(255,255,255,.28);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.ftbot{max-width:1160px;margin:28px auto 0;display:flex;align-items:center;justify-content:space-between;font-size:.73rem;color:rgba(255,255,255,.2);flex-wrap:wrap;gap:12px}
+.ftbot a{color:rgba(255,255,255,.2);text-decoration:none;margin-left:20px;transition:color .15s}
+.ftbot a:hover{color:rgba(255,255,255,.5)}
+
+/* ══ GOOGLE REVIEWS BAR ══ */
+.gbar{
+  background:#fff;
+  border-bottom:2px solid var(--gray200);
+  padding:11px 48px;
+}
+.gbar-i{
+  max-width:1160px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:32px;
+}
+.gbar-left{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.gbar-g{display:flex;align-items:center;gap:6px}
+.gbar-glabel{font-size:.78rem;font-weight:600;color:var(--navy)}
+.gbar-sep{width:1px;height:16px;background:var(--gray200)}
+.gbar-stars{color:var(--gold);font-size:.9rem;letter-spacing:1.5px;line-height:1}
+.gbar-score{font-size:.85rem;font-weight:700;color:var(--navy)}
+.gbar-count{font-size:.75rem;color:var(--gray600)}
+.gbar-right{
+  display:flex;align-items:center;gap:0;flex:1;justify-content:flex-end;overflow:hidden;
+}
+.gbar-review{
+  font-size:.74rem;color:var(--gray600);font-style:italic;
+  padding:0 18px;border-left:1px solid var(--gray200);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:260px;
+}
+.gbar-review:first-child{border-left:none}
+@media(max-width:1040px){.gbar-right .gbar-review:nth-child(n+3){display:none}}
+@media(max-width:720px){.gbar-right{display:none}.gbar{padding:10px 20px}}
+
+/* ══ GET STARTED BUTTON ══ */
+.gs-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--blue);color:#fff;
+  border-radius:var(--r10);
+  padding:14px 32px;
+  font-family:'Inter',sans-serif;font-size:.95rem;font-weight:700;
+  text-decoration:none;letter-spacing:.01em;
+  transition:background .18s,transform .12s,box-shadow .18s;
+  box-shadow:0 4px 20px rgba(13,148,136,.25);
+}
+.gs-btn:hover{background:var(--blue-d);transform:translateY(-2px);box-shadow:0 8px 28px rgba(13,148,136,.35)}
+.gs-btn svg{width:16px;height:16px;flex-shrink:0}
+
+/* ══ WATCH VIDEO BUTTON ══ */
+.watch-btn{
+  display:flex;align-items:center;gap:14px;
+  background:#fff;
+  border:2px solid #0d9488;
+  border-radius:var(--r10);
+  padding:14px 18px;
+  cursor:pointer;
+  margin-top:20px;
+  width:100%;max-width:420px;
+  text-align:left;
+  font-family:'Inter',sans-serif;
+  position:relative;
+  box-shadow:0 0 0 4px rgba(13,148,136,.13), 0 4px 18px rgba(13,148,136,.18);
+  animation:watchGlow 2.6s ease-in-out infinite;
+  transition:transform .15s,box-shadow .2s;
+}
+@keyframes watchGlow{
+  0%,100%{box-shadow:0 0 0 4px rgba(13,148,136,.13),0 4px 18px rgba(13,148,136,.18)}
+  50%{box-shadow:0 0 0 8px rgba(13,148,136,.2),0 6px 24px rgba(13,148,136,.26)}
+}
+.watch-btn:hover{
+  border-color:#0b7a70;
+  box-shadow:0 0 0 7px rgba(13,148,136,.22),0 8px 28px rgba(13,148,136,.28);
+  transform:translateY(-2px);
+  animation:none;
+}
+.watch-btn-icon{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--blue);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+}
+.watch-btn-icon svg{width:14px;height:14px;margin-left:2px}
+.watch-btn-text{flex:1}
+.watch-btn-label{
+  display:block;font-size:.65rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:2px;
+}
+.watch-btn-title{
+  display:block;font-size:.875rem;font-weight:600;
+  color:var(--navy);line-height:1.3;
+}
+.watch-btn-arrow{width:16px;height:16px;color:var(--gray400);flex-shrink:0}
+
+/* ══ VIDEO MODAL ══ */
+.vmodal{
+  display:none;position:fixed;inset:0;z-index:1000;
+  background:rgba(13,31,60,.82);backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;padding:24px;
+}
+.vmodal.open{display:flex;animation:mfade .2s ease}
+@keyframes mfade{from{opacity:0}to{opacity:1}}
+.vmodal-box{
+  background:#000;border-radius:var(--r14);
+  overflow:hidden;width:100%;max-width:860px;
+  position:relative;
+  box-shadow:0 32px 80px rgba(0,0,0,.6);
+  animation:mslide .22s ease;
+}
+@keyframes mslide{from{transform:scale(.96)}to{transform:scale(1)}}
+.vmodal-close{
+  position:absolute;top:12px;right:12px;z-index:10;
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;color:#fff;transition:background .15s;
+}
+.vmodal-close:hover{background:rgba(0,0,0,.9)}
+.vmodal-close svg{width:14px;height:14px}
+.vmodal-frame{aspect-ratio:16/9;width:100%}
+.vmodal-frame iframe{width:100%;height:100%;border:none;display:block}
+.vmodal-caption{
+  padding:12px 18px;
+  font-size:.78rem;font-weight:500;
+  color:rgba(255,255,255,.5);
+  background:#0a0a0a;
+}
+
+/* ══ ANIMATE ══ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.au{opacity:0}.au.on{animation:fadeUp .5s ease forwards}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:1040px){
+  .hero-g,.vid-split,.emo-g,.kb-g{grid-template-columns:1fr;gap:48px}
+  .hero-g{padding:56px 0 64px}
+  .ben-g{grid-template-columns:1fr 1fr}
+  .ben-g .bc:nth-child(2n){border-right:none}
+  .ben-g .bc:nth-child(3n){border-right:1px solid var(--gray200)}
+  .proc-g{grid-template-columns:1fr 1fr}.proc-g::before{display:none}
+  .tgrid{grid-template-columns:1fr 1fr}
+  .svc-g{grid-template-columns:1fr}
+  .ftg{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:680px){
+  .infostrip,.sw,.sg,.sn,.fcta,footer,.trib{padding-left:20px;padding-right:20px}
+  .nav-i{height:62px;padding:0 20px}
+  .infostrip{display:none}
+  .ben-g{grid-template-columns:1fr}.ben-g .bc{border-right:none}
+  .proc-g{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr}
+  .hstats{flex-direction:column;gap:0}
+  .hstat+.hstat{border-left:none;padding-left:0;border-top:1px solid var(--gray200);padding-top:16px;margin-top:16px}
+  .ftg{grid-template-columns:1fr}
+  .ftbot{flex-direction:column;text-align:center}
+  .nav-tel{display:none}
+  .nvdiv{display:none}
+  .trib-i{justify-content:flex-start;gap:12px}
+  .trsep{display:none}
+  .hero,.hero-g{padding-left:0;padding-right:0}
+  .sg,.sw,.sn{padding-top:64px;padding-bottom:64px}
+}
+</style>
+<link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,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"/>
+</head>
+<body>
+
+<!-- INFO STRIP -->
+<div class="infostrip">
+  <div class="infostrip-i">
+    <div class="isl">
+      <div class="isitem">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Mon – Fri &nbsp;9 AM – 5 PM
+      </div>
+      <div class="isitem">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:4707584190">470-758-4190</a>
+      </div>
+      <div class="isitem">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Client Support 24/7
+      </div>
+    </div>
+    <div class="isr">
+      <div class="isr-badge">Medicaid Funded Program</div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-i">
+    <div class="logo">
+      <div class="logo-box" style="background:none;padding:0;overflow:hidden"><img src="data:image/jpeg;base64,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" alt="CareStar Logo" style="width:42px;height:42px;border-radius:11px;object-fit:cover;display:block"/></div>
+      <div class="logo-text">
+        <span class="ln">CareStar Healthcare</span>
+        <span class="ls">Georgia Pediatric Program</span>
+      </div>
+    </div>
+    <div class="nav-r">
+      <a class="nav-tel" href="tel:4707584190">
+        <div class="tel-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div class="tel-txt"><span class="tn">470-758-4190</span><span class="tl">Call our team</span></div>
+      </a>
+      <div class="nvdiv"></div>
+      <a class="nav-btn" href="#lead-form">Check Eligibility</a>
+    </div>
+  </div>
+</nav>
+
+<!-- GOOGLE REVIEWS BAR -->
+<div class="gbar">
+  <div class="gbar-i">
+    <div class="gbar-left">
+      <div class="gbar-g">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <span class="gbar-glabel">Google</span>
+      </div>
+      <div class="gbar-sep"></div>
+      <span class="gbar-stars">★★★★★</span>
+      <span class="gbar-score">5.0</span>
+    </div>
+    <div class="gbar-right">
+      <div class="gbar-review">"The best decision we ever made for our son. Incredible team."</div>
+      <div class="gbar-review">"No cost to us, truly professional. GAPP changed our family's life."</div>
+      <div class="gbar-review">"I can't believe this program exists. Our nurse is amazing."</div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-g">
+    <div class="au" id="hleft">
+      <div class="hero-badge"><div class="bdot"></div>Medicaid-Funded · Ages 0–21 · $0 to Families</div>
+      <h1>Your child deserves<br>care at home.<br><em>You deserve rest.</em></h1>
+      <p class="hero-sub">The Georgia Pediatric Program provides <strong>professional in-home nursing care at no cost to your family</strong> for children with special needs fully covered by Medicaid, no waitlist, no bills.</p>
+      <div class="hchecks">
+        <div class="hcrow"><div class="hcdot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span><strong>Licensed nurses come directly to your home</strong> no hospital required</span></div>
+        <div class="hcrow"><div class="hcdot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span><strong>Parents may qualify to be paid caregivers</strong> for their own child</span></div>
+        <div class="hcrow"><div class="hcdot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span><strong>No waitlist</strong> care begins quickly after approval</span></div>
+        <div class="hcrow"><div class="hcdot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span><strong>100% covered by Medicaid</strong> no co-pays, no deductibles, no surprises</span></div>
+      </div>
+
+      <!-- VIDEO BUTTON -->
+      <button class="watch-btn" onclick="openVideo()" style="margin-top:16px;margin-bottom:8px">
+        <div class="watch-btn-icon">
+          <svg viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div class="watch-btn-text">
+          <span class="watch-btn-label">About GAPP</span>
+          <span class="watch-btn-title">Watch Our Video — Click to Watch</span>
+        </div>
+        <svg class="watch-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="hstats">
+        <div class="hstat"><div class="hsn">$0</div><div class="hsl">Cost to qualified families</div></div>
+        <div class="hstat"><div class="hsn">~30 Days</div><div class="hsl">Typical approval time</div></div>
+        <div class="hstat"><div class="hsn">Ages 0–21</div><div class="hsl">Children eligible for GAPP</div></div>
+      </div>
+    </div>
+    <div id="lead-form" class="au" style="animation-delay:.12s">
+      <div class="fcard">
+        <div class="fhd">
+          <div class="fhd-tag"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>No Cost to Your Family · No Obligation</div>
+          <h2>Does your child qualify for GAPP?</h2>
+          <p>Our care team will call you within 30 minutes.</p>
+        </div>
+        <div class="fbd">
+          <div id="fform">
+            <div class="fgrid">
+              <div><label class="fl" for="fn">First Name</label><input class="fi" type="text" id="fn" placeholder="Jane" required/></div>
+              <div><label class="fl" for="ln">Last Name</label><input class="fi" type="text" id="ln" placeholder="Smith" required/></div>
+              <div><label class="fl" for="em">Email Address</label><input class="fi" type="email" id="em" placeholder="jane@email.com" required/></div>
+              <div><label class="fl" for="ph">Phone Number</label><input class="fi" type="tel" id="ph" placeholder="(470) 000-0000" required/></div>
+              <div class="fcol"><label class="fl" for="prog">Program of Interest</label><select class="fi" id="prog"><option value="">Select a program…</option><option>GAPP – Georgia Pediatric Program</option><option>Katie Beckett Waiver</option><option>Not sure help me find out</option></select></div>
+              <div class="fcol"><label class="fl" for="ins">Insurance / Coverage</label><select class="fi" id="ins"><option value="">Select coverage…</option><option>Medicaid</option><option>Commercial Insurance</option><option>Unsure</option></select></div>
+              <div class="fcol"><label class="fl" for="msg">Child's needs <span style="font-weight:400;color:var(--gray400)">(optional)</span></label><textarea class="fi" id="msg" placeholder="Brief description of your child's condition or care needs…"></textarea></div>
+            </div>
+            <button class="fsubmit" onclick="go()">Check My Child's Eligibility →</button>
+            <div class="ftrust"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Your information is private and never shared</div>
+          </div>
+          <div class="fsuccess" id="fsuccess">
+            <div class="fsring"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <h3>You're on your way.</h3>
+            <p>Our care team will reach out within 1 business day with clear answers about your child's eligibility no pressure.</p>
+            <a class="fcallnow" href="tel:4707584190">Need to talk now? Call 470-758-4190</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST RIBBON white, strong border -->
+<div class="trib">
+  <div class="trib-i">
+    <div class="tr"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Medicaid-Certified Agency</div>
+    <div class="trsep"></div>
+    <div class="tr"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>No Waitlist</div>
+    <div class="trsep"></div>
+    <div class="tr"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>$0 Out-of-Pocket</div>
+    <div class="trsep"></div>
+    <div class="tr"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Licensed &amp; Background-Checked Nurses</div>
+  </div>
+</div>
+
+<!-- VIDEO gray bg = visible contrast -->
+<section class="sg" style="padding:80px 48px">
+  <div class="vid-wrap">
+    <div class="vid-copy au">
+      <h2>Learn More About the Georgia Pediatric Program</h2>
+      <p>Understand exactly what GAPP is, who qualifies, and how it works so you can make the best decision for your child and your family.</p>
+      <a class="vid-link" href="#lead-form">Check your child's eligibility<svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+    <div class="au" style="animation-delay:.1s">
+      <div class="vid-frame"><iframe src="https://www.youtube.com/embed/yU0mGpAJFHI?si=2tTZkNauoxaKZOql" title="Learn About GAPP" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe></div>
+      <div style="text-align:center;margin-top:24px">
+        <a href="#lead-form" class="gs-btn" onclick="setTimeout(()=>document.getElementById('fn').focus(),600)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          Get Started — See If You Qualify
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMOTIONAL white -->
+<section class="sw">
+  <div class="emo-g">
+    <div class="au">
+      <div class="eyebrow">Written for parents like you</div>
+      <div class="emo-pull">"I had no idea a program like this even existed."</div>
+      <div class="emo-body">
+        <p>That's what we hear every single day. Parents who have been doing it all alone up at 3 AM, canceling work, running on empty because there was simply no one else.</p>
+        <p>You have been your child's nurse, advocate, and caregiver since day one. <strong>You deserve a professional team in your corner.</strong></p>
+        <p>GAPP exists because your child's medical needs are real and so is your exhaustion. This isn't charity. It's a Medicaid benefit your family has earned. It takes under 3 minutes to find out if you qualify.</p>
+      </div>
+    </div>
+    <div class="ecards au" style="animation-delay:.1s">
+      <div class="ecard"><div class="eico"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div><h4>Care comes to your home</h4><p>No hospital trips, no disruptions. A licensed nurse arrives on your schedule so your child stays comfortable and you stay close.</p></div></div>
+      <div class="ecard"><div class="eico"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><div><h4>You can be the paid caregiver</h4><p>Qualifying parents may receive compensation for the care they already provide. Keep it personal and keep the income in your household.</p></div></div>
+      <div class="ecard"><div class="eico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div><div><h4>Finally exhale</h4><p>When a nurse is with your child, you can work, run errands, or simply rest without guilt, without worry.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS gray -->
+<section class="sg">
+  <div class="ben-hd">
+    <div class="eyebrow au">What You Receive</div>
+    <h2 class="h2 au" style="animation-delay:.04s">Everything covered. Nothing out of pocket.</h2>
+    <p class="lead au" style="animation-delay:.08s">GAPP is a Medicaid benefit fully state-funded that your child is entitled to if they qualify.</p>
+  </div>
+  <div class="ben-g au" style="animation-delay:.12s">
+    <div class="bc"><div class="bcn">01</div><h3>In-Home Skilled Nursing</h3><p>Licensed RNs and LPNs provide medical-level care in your home trach care, tube feeding, medications, vitals with expertise and compassion.</p></div>
+    <div class="bc"><div class="bcn">02</div><h3>Personal Care Support</h3><p>Bathing, dressing, hygiene, repositioning, and mobility support that helps your child thrive and reduces the physical toll on you.</p></div>
+    <div class="bc"><div class="bcn">03</div><h3>Parents Can Be Paid</h3><p>Qualifying parents may be compensated as official caregivers so the best care stays personal and income stays in the family.</p></div>
+    <div class="bc"><div class="bcn">04</div><h3>No Cost to the Family</h3><p>No co-pays, no deductibles, no invoices. Medicaid covers 100% of approved GAPP services for all qualified families.</p></div>
+    <div class="bc"><div class="bcn">05</div><h3>No Waitlist</h3><p>Unlike many state programs, GAPP has no waitlist. Once approved, care can begin quickly often within days of authorization.</p></div>
+    <div class="bc"><div class="bcn">06</div><h3>Custom Care Plan</h3><p>You help shape every detail. Every service is tailored to your child's specific medical needs and personal goals.</p></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS navy -->
+<section class="sn">
+  <div style="max-width:1160px;margin:0 auto">
+    <div class="eyebrow">How It Works</div>
+    <h2 class="h2">From form to care in as little as 30 days.</h2>
+    <p class="lead">We handle the complexity because you already have enough on your plate.</p>
+    <div class="proc-g">
+      <div class="pstep au"><div class="pnum">1</div><h3>Submit Your Info</h3><p>Complete our short form or call us directly. Takes under 3 minutes and costs nothing.</p></div>
+      <div class="pstep au" style="animation-delay:.07s"><div class="pnum">2</div><h3>Eligibility Review</h3><p>Our coordinators verify Medicaid coverage and your child's medical qualifications.</p></div>
+      <div class="pstep au" style="animation-delay:.14s"><div class="pnum">3</div><h3>Care Plan Built Together</h3><p>We work with you and your child's doctor to design a personalized service plan.</p></div>
+      <div class="pstep au" style="animation-delay:.21s"><div class="pnum">4</div><h3>Care Begins at Home</h3><p>A licensed nurse arrives and your family finally has the support it deserves.</p></div>
+    </div>
+    <div class="proc-cta au" style="animation-delay:.28s">
+      <a class="btn-teal" href="#lead-form" style="background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.22);color:#fff;box-shadow:none">Start the Process →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES white -->
+<section class="sw">
+  <div style="max-width:1160px;margin:0 auto">
+    <div class="eyebrow au">Services Included</div>
+    <h2 class="h2 au" style="animation-delay:.04s">What your child will receive</h2>
+    <p class="lead au" style="animation-delay:.08s">All services performed by licensed professionals in the comfort of your home.</p>
+    <div class="svc-g">
+      <div class="scard au"><div class="shd"><div class="sico"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div><h3>Skilled Nursing Services</h3><div class="ssub">Provided by licensed RNs &amp; LPNs</div></div></div><ul class="slist"><li>Medication administration &amp; management</li><li>Tracheostomy care, cleaning &amp; tube changes</li><li>Gastrostomy tube feeding, care &amp; changing</li><li>Respiratory treatments &amp; suctioning</li><li>Vital signs monitoring &amp; documentation</li><li>Wound care &amp; dressing changes</li><li>Bagging via trach or mouth</li><li>Reporting &amp; coordination with care physicians</li></ul></div>
+      <div class="scard au" style="animation-delay:.08s"><div class="shd"><div class="sico"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><div><h3>Personal Care Services</h3><div class="ssub">Daily living support &amp; assistance</div></div></div><ul class="slist"><li>Bathing, grooming &amp; personal hygiene</li><li>Dressing &amp; appearance assistance</li><li>Turning, repositioning &amp; skin care</li><li>Wheelchair mobility &amp; transfers</li><li>Feeding assistance &amp; nutrition support</li><li>Linen changes &amp; room care</li><li>Daily living activity assistance</li><li>Observation, monitoring &amp; wellness support</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS gray -->
+<section class="sg">
+  <div style="max-width:1160px;margin:0 auto">
+    <div class="eyebrow au">Parent Stories</div>
+    <h2 class="h2 au" style="animation-delay:.04s">Real families. Real relief.</h2>
+    <p class="lead au" style="animation-delay:.08s">The words of Georgia parents who were once exactly where you are now.</p>
+    <div class="tgrid">
+      <div class="tcard au"><div class="tcstars">★★★★★</div><div class="tcq">"I cried when I found out this was real. I had been doing everything alone for four years. Within 30 days, we had a licensed nurse in our home. At no cost to us. I still can't believe it."</div><div class="tcf"><div class="tcav">M</div><div><div class="tcn">Marcus T.</div><div class="tcm">Atlanta, GA · Father of a 7-year-old</div></div></div></div>
+      <div class="tcard au" style="animation-delay:.08s"><div class="tcstars">★★★★★</div><div class="tcq">"GAPP gave me my life back. I returned to work for the first time in three years. My daughter is in wonderful hands, and I'm not drowning anymore. I tell every parent I know."</div><div class="tcf"><div class="tcav">L</div><div><div class="tcn">LaToya W.</div><div class="tcm">Decatur, GA · Mother of two</div></div></div></div>
+      <div class="tcard au" style="animation-delay:.16s"><div class="tcstars">★★★★★</div><div class="tcq">"The team walked us through every step. I kept thinking there had to be a catch. There wasn't. Our son receives incredible care. And it costs us absolutely nothing."</div><div class="tcf"><div class="tcav">D</div><div><div class="tcn">David &amp; Rosa P.</div><div class="tcm">Jonesboro, GA · Parents of a 12-year-old</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- KATIE BECKETT white -->
+<section class="sw">
+  <div style="max-width:1160px;margin:0 auto">
+    <div class="eyebrow au">Also Available</div>
+    <h2 class="h2 au" style="animation-delay:.04s">Your income shouldn't determine your child's care.</h2>
+    <p class="lead au" style="animation-delay:.08s">The Katie Beckett Waiver grants Medicaid to children under 18 based on their medical needs regardless of family income.</p>
+    <div class="kb-g">
+      <div class="kbitems">
+        <div class="kbi au"><div class="kbico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><strong>Income does not disqualify you</strong><span>Eligibility is based on your child's medical needs not what you earn.</span></div></div>
+        <div class="kbi au" style="animation-delay:.07s"><div class="kbico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><strong>For children under 18</strong><span>Any child under 18 requiring an institutional level of care may be eligible.</span></div></div>
+        <div class="kbi au" style="animation-delay:.14s"><div class="kbico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><strong>Unlocks full GAPP access</strong><span>Once approved, all GAPP services are available including in-home nursing at no cost.</span></div></div>
+        <div class="kbi au" style="animation-delay:.21s"><div class="kbico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><strong>We guide you through everything</strong><span>Our team handles the paperwork and walks your family through every step.</span></div></div>
+      </div>
+      <div class="kbpanel au" style="animation-delay:.1s">
+        <div class="kbpull">"I made too much for Medicaid or so I thought."</div>
+        <p>Thousands of Georgia families have been told they don't qualify for Medicaid. But the Katie Beckett Waiver changes everything. <strong>If your child has significant medical needs, you may qualify regardless of your income level.</strong></p>
+        <a class="fsubmit" href="#lead-form" style="display:block;text-align:center;text-decoration:none;border-radius:var(--r10)">Ask About Katie Beckett →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA navy -->
+<section class="fcta">
+  <div class="fcta-i au">
+    <div class="fcta-label">One Last Thing</div>
+    <h2 class="fcta-h">The only question left is:<br><em>what are you waiting for?</em></h2>
+    <p class="fcta-p">Your child could have a licensed nurse at home. You could sleep through the night. You could return to work. You could simply breathe. It costs nothing to find out if you qualify.</p>
+    <div class="fcta-btns">
+      <a class="fcta-a" href="#lead-form">Check Eligibility →</a>
+      <a class="fcta-b" href="tel:4707584190"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call 470-758-4190</a>
+    </div>
+    <div class="fcta-note">Mon–Fri · 9 AM–5 PM · Client Support 24/7</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ftg">
+    <div class="ftb">
+      <span class="fbn">CareStar Healthcare</span>
+      <p>At CareStar Healthcare, we believe quality pediatric care is a right not a privilege. We deliver it with compassion, professionalism, and deep respect for every Georgia family we serve.</p>
+      <div class="ftlinks">
+        <a href="tel:4707584190"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>470-758-4190</a>
+        <a href="mailto:info@carestarhealthcare.com"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@carestarhealthcare.com</a>
+        <span class="ftlinks-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>3269 N Henry Blvd, Stockbridge, GA 30281</span>
+      </div>
+    </div>
+    <div class="ftc">
+      <h5>Services</h5>
+      <span class="ftxt">GAPP Services</span>
+      <span class="ftxt">Private Duty Nursing</span>
+      <span class="ftxt">Skilled Nursing</span>
+      <span class="ftxt">Katie Beckett Waiver</span>
+      <span class="ftxt">Intake Process</span>
+    </div>
+    <div class="ftc">
+      <h5>Service Areas</h5>
+      <span class="ftxt">Henry County</span>
+      <span class="ftxt">Fulton County</span>
+      <span class="ftxt">DeKalb County</span>
+      <span class="ftxt">Douglas County</span>
+      <span class="ftxt">Rockdale County</span>
+      <span class="ftxt">Bibb County</span>
+      <span class="ftxt">Cobb County</span>
+      <span class="ftxt">Forsyth County</span>
+      <span class="ftxt">Gwinnett County</span>
+    </div>
+    <div class="ftc">
+      <h5>Company</h5>
+      <span class="ftxt">About Us</span>
+      <span class="ftxt">Employment</span>
+      <span class="ftxt">Blog</span>
+      <span class="ftxt">Contact</span>
+      <h5 style="margin-top:20px">Hours</h5>
+      <span class="ftxt">Mon–Fri, 9 AM – 5 PM</span>
+      <span class="ftxt">Client Support 24/7</span>
+    </div>
+  </div>
+  <div class="ftbot">
+    <span>© 2024 CareStar Healthcare LLC · All rights reserved.</span>
+    <span>
+      <span style="color:rgba(255,255,255,.2);margin-left:20px">Privacy Policy</span>
+      <span style="color:rgba(255,255,255,.2);margin-left:20px">Terms of Service</span>
+    </span>
+  </div>
+</footer>
+
+<!-- VIDEO MODAL -->
+<div class="vmodal" id="vmodal" onclick="closeVideo(event)">
+  <div class="vmodal-box">
+    <button class="vmodal-close" onclick="closeVideo()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="vmodal-frame">
+      <iframe id="vframe" src="" title="About GAPP" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="vmodal-caption">About the Georgia Pediatric Program</div>
+  </div>
+</div>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.au').forEach(el => io.observe(el));
+setTimeout(() => {
+  ['hleft','lead-form'].forEach(id => { const el = document.getElementById(id); if (el) el.classList.add('on'); });
+}, 60);
+function openVideo() {
+  const modal = document.getElementById('vmodal');
+  document.getElementById('vframe').src = 'https://www.youtube.com/embed/yU0mGpAJFHI?si=2tTZkNauoxaKZOql?autoplay=1';
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeVideo(e) {
+  if (e && e.target !== document.getElementById('vmodal') && !e.target.closest('.vmodal-close')) return;
+  document.getElementById('vmodal').classList.remove('open');
+  document.getElementById('vframe').src = '';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeVideo({target: document.getElementById('vmodal')}); });
+async function go() {
+  const fn = document.getElementById('fn').value.trim();
+  const ln = document.getElementById('ln').value.trim();
+  const em = document.getElementById('em').value.trim();
+  const ph = document.getElementById('ph').value.trim();
+  const prog = document.getElementById('prog').value;
+  const ins = document.getElementById('ins').value;
+  const msg = document.getElementById('msg').value.trim();
+
+  if (!fn || !em || !ph) { 
+    alert('Please fill in your name, email, and phone number to continue.'); 
+    return; 
+  }
+
+  const data = {
+    firstName: fn,
+    lastName: ln,
+    email: em,
+    phone: ph,
+    program: prog,
+    insurance: ins,
+    message: msg,
+    source: "GAPP Landing Page"
+  };
+
+  try {
+    await fetch("https://services.leadconnectorhq.com/hooks/lDKtPYPsQvmSLnpgUz59/webhook-trigger/45718510-60c3-4565-bce5-b997e3a69f5d", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+      mode: "no-cors"
+    });
+  } catch(err) {
+    console.error("Webhook error:", err);
+  }
+
+  document.getElementById('fform').style.display = 'none';
+  document.getElementById('fsuccess').style.display = 'block';
+  document.getElementById('lead-form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+</body>
+</html>
